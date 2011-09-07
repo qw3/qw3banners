@@ -1,0 +1,36 @@
+<%= form_for([:administrator, @banner], :html => { :multipart => true }) do |f| %>
+  <% if @banner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@banner.errors.count, "Erro" ) %>:</h2>
+
+      <ul>
+      <% @banner.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="esquerda">
+    <%= image_tag @banner.imagem.url( :small ) %>
+    <div class="field">
+      <%= f.file_field :imagem %>
+    </div>
+  </div>
+
+  <div class="direita">
+    <div class="field">
+      <%= f.label :link %>
+      <%= f.text_field :link %>
+    </div>
+    <div class="field">
+      <%= f.label :publicado %>
+      <%= f.check_box :publicado %>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="actions">
+	  <%= link_to "< Voltar", administrator_banners_path, :class => 'button' %>
+    <%= f.submit :class => 'button', :value => "Salvar" %>
+  </div>
+<% end %>

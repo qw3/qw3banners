@@ -1,0 +1,23 @@
+<%= form_tag( "#", :id => "banners_form", :name => "banners_form") do %>
+  <div class="page_header">
+    <h1>Banners</h1>
+	  <div class="menu-acoes direita">
+      <%= link_to "#", :class => "button publicar", :onclick => 'definirAction( "banners_form", "/administrator/banners/multi_publicar?publicar=1")' do %>
+        <span>Publicar</span>
+      <% end %>
+      <%= link_to "#", :class => "button despublicar", :onclick => 'definirAction( "banners_form", "/administrator/banners/multi_publicar?publicar=0" )' do %>
+        <span>Despublicar</span>
+      <% end %>
+      <%= link_to "#", :class => "button remover", :onclick => 'definirAction( "banners_form", "/administrator/banners/multi_remover", 1 )' do %>
+        <span>Remover</span>
+      <% end %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="inside">
+    <div id="banners-index">
+	    <%= render 'banners'%>
+	  </div>
+  </div>
+<% end %>

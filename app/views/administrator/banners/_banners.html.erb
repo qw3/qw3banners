@@ -1,0 +1,29 @@
+<table class="list">
+  <tr>
+    <th><%= check_all_th %></th>
+    <th>ID</th>
+    <th>Imagem</th>
+    <th>Link</th>
+    <th>Ordem</th>
+    <th>Publicado</th>
+  </tr>
+
+<% @banners.each do |banner| %>
+  <tr class="<%= cycle('linha0','linha1') %>">
+    <td width="5%" align="center"><%= check_all_td banner.id %></td>
+    <td width="10%"><%= link_to banner.id, edit_administrator_banner_path(banner) %></td>
+    <td width="10%" align="center"><%= link_to image_tag( banner.imagem.url( :thumb ), :border => 0 ), edit_administrator_banner_path(banner) %></td>
+    <td width="50%"><%= banner.link %></td>
+    <td width="15%" align="center"><%= ordenar_td banner.id %></td>
+    <td align="center" width="10%">
+      <% if banner.publicado %>
+        <% icone = image_tag 'icons/publicado.png', :size => '16x16' %>
+      <% else %>
+        <% icone = image_tag 'icons/sair.png', :size => '16x16' %>
+      <% end %>
+      <%= link_to icone, "/administrator/banners/#{banner.id}/publicar" %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<%= pagination_footer @banners %>
