@@ -1,5 +1,4 @@
 require "qw3banners/version"
-require "configuracao_banners.rb"
 
 module Qw3banners
   class Qw3banners < Rails::Engine

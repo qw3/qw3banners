@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.description = %q{Gerencia a inclusão, remoção e visualização de banners}
 
   #s.rubyforge_project = "qw3banners"
+  s.add_dependency 'qw3common', :git => 'git://github.com/qw3/qw3common.git'
   
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

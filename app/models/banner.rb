@@ -1,6 +1,6 @@
 class Banner < ActiveRecord::Base
   
-  has_attached_file :imagem, :styles => { :small => "100x100", :thumb => "40x40" }, :path => "#{Rails.root}/public/images/banners/banner_#{:banner_id}/:id/:style/:filename", :url => "/images/banners/banner_#{:banner_id}/:id/:style/:filename", :default_url => "#{ConfiguracaoBanner["path_imagem_nao_disponivel"]}/:style.png"
+  has_attached_file :imagem, :styles => { :small => "100x100", :thumb => "40x40" }, :path => "app/assets/images/banners/banner_#{:banner_id}/:id/:style/:filename", :url => "/images/banners/banner_#{:banner_id}/:id/:style/:filename", :default_url => "#{Settings["PAPERCLIP.missing_path"]}/:style.png"
   
   default_scope :order => "ordem"
   
