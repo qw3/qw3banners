@@ -43,6 +43,7 @@ module Qw3banners
               post 'banners/multi_publicar'   => :multi_publicar
               post 'banners/ordenar'          => :ordenar
             end
+          end
           "
         end
       end
