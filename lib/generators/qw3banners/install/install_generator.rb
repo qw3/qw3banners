@@ -22,7 +22,29 @@ module Qw3banners
       end
       
       def create_migrations
-        migration_template 'db/migrate/create_banners.rb', 'db/migrate/create_banners.rb'
+        if yes? 'Criar migrations?'
+          migration_template 'db/migrate/create_banners.rb', 'db/migrate/create_banners.rb'
+          rake 'db:migrate'
+        end
+      end
+      
+      def create_routes
+        if yes? 'Criar rotas?'
+          routes "namespace :administrator do
+            resources :banners do
+              member do
+                get 'publicar'
+              end
+            end
+    
+            controller :banners do
+              get 'banners/publicar'          => :publicar
+              post 'banners/multi_remover'    => :multi_remover
+              post 'banners/multi_publicar'   => :multi_publicar
+              post 'banners/ordenar'          => :ordenar
+            end
+          "
+        end
       end
       
     end
