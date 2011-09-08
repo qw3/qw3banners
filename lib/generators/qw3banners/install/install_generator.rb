@@ -48,6 +48,11 @@ module Qw3banners
         end
       end
       
+      def create_images
+        copy_file 'public/images/seta-baixo.png', 'public/images/seta-baixo.png'
+        copy_file 'public/images/seta-cima.png', 'public/images/seta-cima.png'
+      end
+      
     end
   end
 end
