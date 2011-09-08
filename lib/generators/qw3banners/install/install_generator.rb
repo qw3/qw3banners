@@ -30,7 +30,7 @@ module Qw3banners
       
       def create_routes
         if yes? 'Criar rotas?'
-          routes "namespace :administrator do
+          route "namespace :administrator do
             resources :banners do
               member do
                 get 'publicar'
