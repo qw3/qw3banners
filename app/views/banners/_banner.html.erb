@@ -1,0 +1,36 @@
+<%= javascript_include_tag 'qw3/qw3banners.js' %>
+
+<div class="container">
+	<div class="wt-rotator">
+
+		<div class="screen">
+			<noscript>
+				<!-- placeholder 1st image when javascript is off -->
+				<%= image_tag banners.first.imagem.url(:original) %>
+			</noscript>
+		</div>
+
+		<div class="c-panel">
+
+			<div class="buttons">
+				<div class="prev-btn">
+				</div>
+				<div class="play-btn">
+				</div>
+				<div class="next-btn">
+				</div>
+			</div>
+
+			<div class="thumbnails">
+				<ul>
+					<% banners.each do |banner| %>
+						<li effect="fade">
+							<%= link_to image_tag( banner.imagem.url(:original) ), banner.imagem.url(:original) %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>

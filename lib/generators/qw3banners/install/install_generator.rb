@@ -48,9 +48,10 @@ module Qw3banners
         end
       end
       
-      def create_images
+      def create_files
         copy_file 'public/images/seta-baixo.png', 'public/images/seta-baixo.png'
         copy_file 'public/images/seta-cima.png', 'public/images/seta-cima.png'
+        copy_file 'public/javascripts/qw3banners.js', 'public/javascripts/qw3/qw3banners.js'
       end
       
     end
