@@ -1,3 +1,3 @@
 module Qw3banners
-  VERSION = "1.1.0"
+  VERSION = "1.1.1"
 end
