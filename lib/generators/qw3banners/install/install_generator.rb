@@ -30,21 +30,7 @@ module Qw3banners
       
       def create_routes
         if yes? 'Criar rotas?'
-          route "namespace :administrator do
-            resources :banners do
-              member do
-                get 'publicar'
-              end
-            end
-    
-            controller :banners do
-              get 'banners/publicar'          => :publicar
-              post 'banners/multi_remover'    => :multi_remover
-              post 'banners/multi_publicar'   => :multi_publicar
-              post 'banners/ordenar'          => :ordenar
-            end
-          end
-          "
+          generate "qw3common:routes administrator/banners"
         end
       end
       
