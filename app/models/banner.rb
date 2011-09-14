@@ -6,9 +6,6 @@ class Banner < ActiveRecord::Base
   
   before_create :atribuir_ordem
   
-  cattr_reader :per_page
-  @@per_page = 10
-  
   def atribuir_ordem
     if Banner.count.zero?
       self.ordem = 1
