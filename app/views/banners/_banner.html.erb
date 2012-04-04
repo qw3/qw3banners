@@ -1,4 +1,8 @@
-<%= javascript_include_tag 'qw3/qw3banners.js' %>
+<% if Rails.application.config.assets.enabled %>
+	<%= javascript_include_tag 'templates/qw3/qw3banners.js' %>
+<% else %>
+	<%= javascript_include_tag 'qw3/qw3banners.js' %>
+<% end %>
 
 <% unless banners.nil? or banners.count.zero? %>
 	<div class="container">
