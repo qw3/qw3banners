@@ -24,6 +24,7 @@ module Qw3banners
       def create_migrations
         if yes? 'Criar migrations?'
           migration_template 'db/migrate/create_banners.rb', 'db/migrate/create_banners.rb'
+          sleep( 1.0 ) # Espera 1 segundo para que o timestamp da proxima migration seja diferente
           rake 'db:migrate'
         end
       end
