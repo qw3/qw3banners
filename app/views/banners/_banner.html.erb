@@ -9,7 +9,7 @@
 			<div class="screen">
 				<noscript>
 					<!-- placeholder 1st image when javascript is off -->
-					<%= image_tag banners.first.imagem.url(:original) %>
+					<%= image_tag banners.first.imagem.url(:original), :class => banners.first.classe %>
 				</noscript>
 			</div>
 	
@@ -28,7 +28,7 @@
 					<ul>
 						<% banners.each do |banner| %>
 							<li effect="fade">
-								<%= link_to image_tag( banner.imagem.url(:original) ), banner.imagem.url(:original) %>
+								<%= link_to image_tag( banner.imagem.url(:original) ), banner.imagem.url(:original), :class => banner.classe %>
 							</li>
 						<% end %>
 					</ul>
