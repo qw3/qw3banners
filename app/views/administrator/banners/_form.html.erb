@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="esquerda">
-    <%= link_to image_tag @banner.imagem.url(:small), @banner.imagem.url(:original), :class => 'lightbox' %>
+    <%= link_to image_tag( @banner.imagem.url(:small) ), @banner.imagem.url(:original), :class => 'lightbox' %>
     <div class="field">
       <%= f.file_field :imagem %>
     </div>
