@@ -16,6 +16,10 @@
     <div class="field">
       <%= f.file_field :imagem %>
     </div>
+    <div class="field">
+      <%= f.label :publicado %>
+      <%= f.check_box :publicado %>
+    </div>
   </div>
 
   <div class="direita">
@@ -24,12 +28,12 @@
       <%= f.text_field :link %>
     </div>
     <div class="field">
-      <%= f.label :publicado %>
-      <%= f.check_box :publicado %>
-    </div>
-    <div class="field">
       <%= f.label :classe %>
       <%= f.text_field :classe %>
+    </div>
+    <div class="field">
+      <%= f.label :titulo %>
+      <%= f.text_field :titulo %>
     </div>
   </div>
   <div class="clear"></div>
