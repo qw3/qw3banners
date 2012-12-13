@@ -2,6 +2,7 @@
   <div class="page_header">
     <h1>Banners</h1>
 	  <div class="menu-acoes direita">
+      <%= link_to "Adicionar", new_administrator_banner_path, :class => "button add"  %>
       <%= link_to "#", :class => "button publicar", :onclick => 'definirAction( "banners_form", "/administrator/banners/multi_publicar?publicar=1")' do %>
         <span>Publicar</span>
       <% end %>
